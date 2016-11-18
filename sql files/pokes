@@ -1,0 +1,88 @@
+CREATE DATABASE  IF NOT EXISTS `pokes` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `pokes`;
+-- MySQL dump 10.13  Distrib 5.5.53, for debian-linux-gnu (x86_64)
+--
+-- Host: 127.0.0.1    Database: pokes
+-- ------------------------------------------------------
+-- Server version	5.5.53-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pokes`
+--
+
+DROP TABLE IF EXISTS `pokes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pokes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user1` int(11) DEFAULT NULL,
+  `user2` int(11) DEFAULT NULL,
+  `pokes` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pokes`
+--
+
+LOCK TABLES `pokes` WRITE;
+/*!40000 ALTER TABLE `pokes` DISABLE KEYS */;
+INSERT INTO `pokes` VALUES (7,4,3,4,'2016-11-18 11:25:38','2016-11-18 11:25:38'),(8,4,2,3,'2016-11-18 11:26:40','2016-11-18 11:26:40'),(9,4,1,3,'2016-11-18 11:26:43','2016-11-18 11:26:43'),(10,1,4,2,'2016-11-18 11:27:01','2016-11-18 11:27:01'),(11,1,3,1,'2016-11-18 11:27:15','2016-11-18 11:27:15'),(12,5,3,1,'2016-11-18 11:28:00','2016-11-18 11:28:00'),(13,5,2,1,'2016-11-18 11:28:01','2016-11-18 11:28:01'),(14,5,1,1,'2016-11-18 11:28:01','2016-11-18 11:28:01'),(15,5,4,1,'2016-11-18 11:28:04','2016-11-18 11:28:04'),(16,7,4,1,'2016-11-18 11:28:52','2016-11-18 11:28:52'),(17,7,5,1,'2016-11-18 11:28:53','2016-11-18 11:28:53'),(18,7,6,1,'2016-11-18 11:28:53','2016-11-18 11:28:53'),(19,8,7,1,'2016-11-18 11:29:25','2016-11-18 11:29:25'),(20,8,3,1,'2016-11-18 11:29:26','2016-11-18 11:29:26'),(21,8,2,1,'2016-11-18 11:29:27','2016-11-18 11:29:27'),(22,9,8,1,'2016-11-18 11:29:49','2016-11-18 11:29:49'),(23,9,5,1,'2016-11-18 11:29:49','2016-11-18 11:29:49'),(24,9,3,11,'2016-11-18 11:29:50','2016-11-18 11:29:50'),(25,9,4,3,'2016-11-18 11:29:50','2016-11-18 11:29:50'),(26,9,2,1,'2016-11-18 11:31:35','2016-11-18 11:31:35'),(27,10,9,2,'2016-11-18 11:32:04','2016-11-18 11:32:04'),(28,10,8,2,'2016-11-18 11:32:05','2016-11-18 11:32:05'),(29,10,7,3,'2016-11-18 11:32:08','2016-11-18 11:32:08'),(30,10,6,3,'2016-11-18 11:32:10','2016-11-18 11:32:10'),(31,10,5,3,'2016-11-18 11:32:12','2016-11-18 11:32:12'),(32,10,4,4,'2016-11-18 11:32:14','2016-11-18 11:32:14'),(33,10,2,1,'2016-11-18 11:32:17','2016-11-18 11:32:17'),(34,10,1,2,'2016-11-18 11:32:18','2016-11-18 11:32:18'),(35,11,10,9,'2016-11-18 11:32:43','2016-11-18 11:32:43');
+/*!40000 ALTER TABLE `pokes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `alias` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `poke_count` int(11) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Troy Amelotte','t-roy','asdf@aol.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-09',2,'2016-11-18 09:51:52',NULL),(2,'asdf','Eduardo','edu@edu.com','e861934fb42d139f079a026ed5cb5200','2016-11-17',2,'2016-11-18 10:05:30',NULL),(3,'andy','andee','andee@aol.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-09',10,'2016-11-18 10:43:38','2016-11-18 10:43:38'),(4,'Hollie','Bestgfever','hollie.calvert@yahoo.com','6a204bd89f3c8348afd5c77c717a097a','2016-10-03',6,'2016-11-18 11:18:40','2016-11-18 11:18:40'),(5,'Kevin','kev','kev@kev.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-03',3,'2016-11-18 11:27:59','2016-11-18 11:27:59'),(6,'Henry','DaHen','hen@hen.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-16',3,'2016-11-18 11:28:29','2016-11-18 11:28:29'),(7,'lenny','len','len@len.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-09',3,'2016-11-18 11:28:51','2016-11-18 11:28:51'),(8,'The Pope','d0pep0pe','pope@dope.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-15',2,'2016-11-18 11:29:24','2016-11-18 11:29:24'),(9,'Chris','CB','cb@cb.com','6a204bd89f3c8348afd5c77c717a097a','2016-06-22',2,'2016-11-18 11:29:46','2016-11-18 11:29:46'),(10,'Dustin','dust','dust@dust.com','6a204bd89f3c8348afd5c77c717a097a','2016-11-03',9,'2016-11-18 11:32:02','2016-11-18 11:32:02'),(11,'James','jamison','jamerino@jameroni.com','6a204bd89f3c8348afd5c77c717a097a','2016-07-21',0,'2016-11-18 11:32:41','2016-11-18 11:32:41');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-11-18 11:39:04
